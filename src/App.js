@@ -1,10 +1,13 @@
-
 import Header from './components/Header';
+import Trending from './Pages/Trending';
+import Movies from './Pages/Movies';
+import Series from './Pages/Series';
+import Search from './Pages/Search';
 import SimpleBottomNavigation from './components/MainNavigation';
-
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container } from '@mui/system';
+
 
 function App() {
   return (
