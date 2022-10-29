@@ -31,7 +31,7 @@ export default function SimpleBottomNavigation() {
         else if(value === 1) navigate('/movies')
         else if(value === 2) navigate('/series')
         else if(value === 3) navigate('/search')
-    }, [value])
+    }, [value, navigate])
 
     return (
         <BottomNavigation
