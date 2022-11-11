@@ -12,7 +12,8 @@ const SingleContent = ({ id,
     title,
     vote_average }) => {
     return (
-        <ContentModal className='media' media_type={media_type} id={id}>
+       <div className='media'>
+         <ContentModal  media_type={media_type} id={id}>
             <Badge badgeContent={vote_average} color={vote_average > 6 ? 'primary' : 'secondary'} />
             <img className='poster' src={poster ? `${img_300}/${poster}` : unavailable} alt="" />
             <b className='title'>{title}</b>
@@ -21,6 +22,7 @@ const SingleContent = ({ id,
                 <span className='subTitle'>{date}</span>
             </span>
         </ContentModal>
+       </div>
     )
 }
 
