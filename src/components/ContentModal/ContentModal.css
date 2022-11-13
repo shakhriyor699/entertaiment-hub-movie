@@ -1,0 +1,56 @@
+.ContentModal__landscape {
+    object-fit: cover;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.contentModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagline {
+    padding-bottom: 10px;
+    color: white;
+}
+
+
+.ContentModal__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContentModal__title {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ContentModal__description {
+    color: white;
+    margin-bottom: 10px;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 1px 1px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+
+}
+
+.ContentModal__description::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+

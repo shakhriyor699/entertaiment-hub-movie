@@ -6,7 +6,11 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
-import { img_500, unavailable } from '../../config/config';
+import { img_300, unavailable } from '../../config/config';
+import { YouTube } from '@mui/icons-material';
+
+import './ContentModal.css';
+import Gallery from '../Carousel';
 
 
 
@@ -14,7 +18,7 @@ const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    width: '100%',
+    // width: '100%',
     transform: 'translate(-50%, -50%)',
     bgcolor: '#282c34',
     border: '2px solid #000',
@@ -71,9 +75,21 @@ export default function ContentModal({ children, media_type, id }) {
                 <Fade in={open}>
                     <Box sx={style}>
                         <div className='contentModal'>
-                            <img className='ContentModal__landscape' src={content.backdrop_path ? `${img_500}/${content.poster_path}` : unavailable} alt="" />
+                            <img className='ContentModal__landscape' src={content.backdrop_path ? `${img_300}/${content.poster_path}` : unavailable} alt="" />
                             <div className="ContentModal__about">
-                                <span className='ContentModal__title'></span>
+                                <span className='ContentModal__title'>
+                                    {content.name || content.title} ({(content.first_air_date || content.release_date || "-----").substring(0, 4)})
+                                </span>
+                                {content.tagline && (
+                                    <i className='tagline'>{content.tagline}</i>
+                                )}
+                                <span className='ContentModal__description'>
+                                    {content.overview}
+                                </span>
+                                <div>
+                                    <Gallery media_type={media_type} id={id} />
+                                </div>
+                                <Button variant="contained" color="secondary" startIcon={<YouTube />} onClick={() => window.open(`https://youtube.com/watch?v=${video}`, "_blank")}>Watch the Trailer</Button>
                             </div>
                         </div>
                     </Box>
